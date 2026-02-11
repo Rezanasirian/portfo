@@ -37,7 +37,14 @@ export default function Experience() {
             </div>
             {expandedIndex === index && (
               <div className="experience-content">
-                <p className="experience-description">{exp.description}</p>
+                {/*<p className="experience-description">{exp.description}</p>*/}
+                            {/* Data is Split */}
+                  {exp.description.split("\n").map((paragraph, index) => (
+                    <React.Fragment key={index}>
+                      {paragraph}
+                      <p />
+                    </React.Fragment>
+                  ))}
                 {exp.tags && (
                   <div className="experience-tags">
                     {exp.tags.map((tag, tagIndex) => (

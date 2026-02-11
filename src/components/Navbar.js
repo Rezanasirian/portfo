@@ -18,6 +18,29 @@ export default function Navbar() {
       <Link
         className="navbar-link"
         activeClass="active"
+        to="education"
+        spy={true}
+        smooth={true}
+        offset={-70} // Adjust the offset if you have a fixed navbar
+        duration={500}
+      >
+        Education
+      </Link>
+      <Link
+        className="navbar-link"
+        activeClass="active"
+        to="experience"
+        spy={true}
+        smooth={true}
+        offset={-70} // Adjust the offset if you have a fixed navbar
+        duration={500}
+      >
+        Experience
+      </Link>
+
+      <Link
+        className="navbar-link"
+        activeClass="active"
         to="projects"
         spy={true}
         smooth={true}

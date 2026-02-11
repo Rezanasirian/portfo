@@ -4,7 +4,7 @@
     "tagline": "AI Engineer specializing in LLM-based multi-agent systems and Business Intelligence solutions.",
     "email": "rezanasirian@gmail.com",
     "cv_link": "https://drive.google.com/file/d/1jJdppnKPn-Dwu6PvmLkQchF-l8TzfOaO/view?usp=sharing",
-    "about_text": "AI Engineer specializing in LLM-based multi-agent systems and BI solutions. Proficient in data analysis, visualization, and developing intelligent chatbots and dashboards using tools like LangChain, FastAPI, and Python. Strong analytical and communication skills for cross-functional collaboration.",
+    "about_text": "I'm an AI & BI Engineer with over 4 years of professional experience – starting my career as a Business Intelligence Developer and transitioning into AI Engineering over the past year.\n\nDuring my 3+ years in BI (2021–2025), I designed and developed end-to-end reporting solutions, interactive dashboards (Dundas BI), multi-dimensional cubes (SSAS), and API generators, while working extensively with SQL, Python, and JavaScript.\n\nIn the last year (2025–present), I've specialized in LLM-based systems. I built a conversational multi-agent framework that enables natural language interaction with structured data – integrating LangChain, FastAPI, and real-time SSE. I also developed a graph-based RAG chatbot for Iranian tax law, significantly improving retrieval accuracy.\n\nI'm passionate about bridging the gap between traditional data systems and modern AI, and I'm currently exploring fine-tuning and local deployment of LLMs for privacy-aware enterprise solutions.",
     "socials": {
       "linkedin": "https://linkedin.com/in/reza-nasirian",
       "telegram": "https://t.me/Reza_Nasirian",
@@ -20,8 +20,8 @@
       "img": "project-tax.png"
     },
     {
-      "title": "CubeAgent - Multi-Agent Conversational AI System",
-      "content": "Designed and developed a multi-agent framework enabling conversational interaction with structured data using LLMs. Implemented specialized agents for data analysis, query generation (MDX), and visualization.",
+      "title": "CubeAgent - Multi-Agent Conversational  AI System",
+      "content": "Designed and  developed a multi-agent framework enabling conversational interaction with structured data using LLMs. Implemented specialized agents for data analysis, query generation (MDX), and visualization.",
       "url": "http://cubeagent.son.ir/",
       "tech": "#LangChain #Python #FastAPI",
       "img": "project-cube.png"
@@ -33,22 +33,15 @@
       "title": "AI Engineer | LLM Agents",
       "company": "SON Corporate Group",
       "duration": "April 2025 - Present",
-      "description": "Built a multi-agent system for conversational data interaction and analysis. Developed specialized agents for data analysis and visualization using LangChain. Implemented real-time communication and modular orchestration.",
-      "tags": ["LangChain", "FastAPI", "Python"]
+      "description": "• Built a multi-agent system for conversational data interaction and analysis, developing specialized agents for data analysis, MDX query generation, and visualization using LangChain.  \n• Developed a Retrieval-Augmented Generation (RAG) system centered on Iranian tax laws, creating a chatbot for answering queries from taxpayers and the public using Qdrant vector store, LangChain, Python, and FastAPI, while implementing a graph-based structure to represent tax law hierarchies for better retrieval accuracy. \n• Implemented real-time communication via Server-Sent Events (SSE) and modular orchestration to facilitate seamless agent collaboration.\n• Currently exploring fine-tuning techniques and local model deployment to enhance system autonomy.",
+      "tags": ["LangChain", "FastAPI", "Python", "RAG"]
     },
     {
       "title": "Business Intelligence Developer",
       "company": "SON Corporate Group",
-      "duration": "October 2022 - April 2025",
-      "description": "Composed complex queries and extracted report data to support business intelligence efforts. Designed and developed interactive BI dashboards using Dundas BI and JavaScript.",
-      "tags": ["Dundas BI", "Python", "SQL", "JavaScript"]
-    },
-    {
-      "title": "Junior Business Intelligence Developer",
-      "company": "SON Corporate Group",
-      "duration": "July 2021 - October 2022",
-      "description": "Developed backend API queries to efficiently retrieve data for reporting. Created an API generator tool for easy API generation from arbitrary database tables.",
-      "tags": ["API", "Python", "SQL"]
+      "duration": "July 2021 - April 2025",
+      "description": " • Developed backend API queries to efficiently retrieve and provide data for reporting purposes.\n• Created an API generator tool for generating APIs from arbitrary database tables without coding, including adding conditions to the generated APIs.\n• Composed complex queries and extracted report data to support business intelligence efforts.\n• Designed and developed interactive BI dashboards using Dundas BI, enabling data-driven decision-making.\n• Utilized JavaScript to enhance dashboard functionality and customize features.\n• Integrated web services data using Python, expanding data sources for reporting.\n• Utilized SSAS (SQL Server Analysis Services) to design multi-dimensional data cubes.\n• Worked with Postman to test and validate APIs, ensuring data accuracy and reliability.",
+      "tags": ["Dundas BI", "JavaScript", "Python", "SQL", "SSAS", "API", "Backend"]
     }
   ],
   "services": [
@@ -57,12 +50,28 @@
       "description": "Development of conversational AI systems, data analysis, and machine learning solutions tailored to your business needs."
     },
     {
-      "title": "Business Intelligence",
-      "description": "Interactive BI dashboards and reporting solutions using tools like Dundas BI, SQL, and Python."
-    },
-    {
       "title": "Custom Web Development",
       "description": "End-to-end development of custom web applications, using modern web technologies like Django, and FastAPI."
+    },
+    {
+      "title": "Business Intelligence",
+      "description": "Interactive BI dashboards and reporting solutions using tools like Dundas BI, SQL, and Python."
     }
-  ]
+  ],
+  "education": [
+  {
+    "degree": "Master of Science in Industrial Engineering",
+    "field": "Systems modeling and data analysis",
+    "institution": "University of Tehran",
+    "duration": "2023 - Present",
+    "description": "Focus on advanced data analysis, optimization, and modeling of complex systems. Research involves application of machine learning and LLMs in industrial contexts."
+  },
+  {
+    "degree": "Bachelor of Science in Industrial Engineering",
+    "field": "Industrial Engineering",
+    "institution": "Iran University of Science and Technology (IUST)",
+    "duration": "2018 - 2023",
+    "description": "Comprehensive education in industrial engineering principles, including operations research, production planning, quality control, and information systems."
+  }
+]
 }

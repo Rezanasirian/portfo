@@ -453,3 +453,127 @@ body {
 
   border-radius: 40px;
 }
+@media (max-width: 768px) {
+  .taglinediv h1 {
+    font-size: 5rem;
+  }
+}
+/* ===== Education Section ===== */
+.educationdiv {
+  padding: 3% 12%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.educationdiv h1 {
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+
+.education-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-item {
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--icon-color);  /* یا var(--text-color) */
+  background-color: rgba(13, 13, 12, 0.8);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  box-shadow: 0 4px 12px rgba(187, 17, 17, 0.15);
+}
+
+.education-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.education-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-left: 5px;
+}
+
+.education-duration {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 227, 0.6);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.education-institution {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 227, 0.8);
+  margin: 0.25rem 0 0 0;
+  font-weight: 500;
+}
+
+.education-field {
+  color: var(--icon-color);
+  font-weight: 600;
+}
+
+.education-description {
+  color: rgba(255, 255, 227, 0.8);
+  line-height: 1.6;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+.education-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;    /* فاصله بین آیکون و عنوان - مقدار دلخواه */
+
+}
+
+.education-icon {
+  /*margin-right: 0.5rem;   !* فاصله فقط از راست *!*/
+  font-size: 1.5rem;
+  color: var(--icon-color);
+}
+
+.education-field {
+  display: block;        /* forces new line */
+  /*margin-left: 1.2rem;   !* indentation (adjust as needed) *!*/
+  margin-top: 0.2rem;
+}
+.education-field::before {
+  content: "•";          /* keep the bullet if you like */
+  margin-right: 0.5rem;
+  color: var(--icon-color);
+}
+/* Responsive: برای موبایل عنوان و تاریخ زیر هم قرار بگیرند */
+@media (max-width: 768px) {
+  .education-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-duration {
+    white-space: normal;
+  }
+}
+@media (max-width: 768px) {
+  .experience-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .experience-duration {
+    white-space: normal;
+    margin-left: 0;
+  }
+}
