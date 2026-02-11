@@ -1,0 +1,68 @@
+{
+  "profile": {
+    "name": "Reza Nasirian",
+    "tagline": "AI Engineer specializing in LLM-based multi-agent systems and Business Intelligence solutions.",
+    "email": "rezanasirian@gmail.com",
+    "cv_link": "https://drive.google.com/file/d/1jJdppnKPn-Dwu6PvmLkQchF-l8TzfOaO/view?usp=sharing",
+    "about_text": "AI Engineer specializing in LLM-based multi-agent systems and BI solutions. Proficient in data analysis, visualization, and developing intelligent chatbots and dashboards using tools like LangChain, FastAPI, and Python. Strong analytical and communication skills for cross-functional collaboration.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/reza-nasirian",
+      "telegram": "https://t.me/Reza_Nasirian",
+      "email": "rezanasirian@gmail.com"
+    }
+  },
+  "projects": [
+    {
+      "title": "Tax Law RAG Chatbot",
+      "content": "Developed a RAG system focused on Iranian tax laws. Created a chatbot to answer queries from taxpayers and the general public using Qdrant vector store, LangChain, Python, and FastAPI.",
+      "url": "http://taxsage.son.ir/",
+      "tech": "#LangChain #Python #FastAPI #Qdrant",
+      "img": "project-tax.png"
+    },
+    {
+      "title": "CubeAgent - Multi-Agent Conversational AI System",
+      "content": "Designed and developed a multi-agent framework enabling conversational interaction with structured data using LLMs. Implemented specialized agents for data analysis, query generation (MDX), and visualization.",
+      "url": "http://cubeagent.son.ir/",
+      "tech": "#LangChain #Python #FastAPI",
+      "img": "project-cube.png"
+    }
+  ],
+  "testimonials": [],
+  "experience": [
+    {
+      "title": "AI Engineer | LLM Agents",
+      "company": "SON Corporate Group",
+      "duration": "April 2025 - Present",
+      "description": "Built a multi-agent system for conversational data interaction and analysis. Developed specialized agents for data analysis and visualization using LangChain. Implemented real-time communication and modular orchestration.",
+      "tags": ["LangChain", "FastAPI", "Python"]
+    },
+    {
+      "title": "Business Intelligence Developer",
+      "company": "SON Corporate Group",
+      "duration": "October 2022 - April 2025",
+      "description": "Composed complex queries and extracted report data to support business intelligence efforts. Designed and developed interactive BI dashboards using Dundas BI and JavaScript.",
+      "tags": ["Dundas BI", "Python", "SQL", "JavaScript"]
+    },
+    {
+      "title": "Junior Business Intelligence Developer",
+      "company": "SON Corporate Group",
+      "duration": "July 2021 - October 2022",
+      "description": "Developed backend API queries to efficiently retrieve data for reporting. Created an API generator tool for easy API generation from arbitrary database tables.",
+      "tags": ["API", "Python", "SQL"]
+    }
+  ],
+  "services": [
+    {
+      "title": "AI & ML Solutions",
+      "description": "Development of conversational AI systems, data analysis, and machine learning solutions tailored to your business needs."
+    },
+    {
+      "title": "Business Intelligence",
+      "description": "Interactive BI dashboards and reporting solutions using tools like Dundas BI, SQL, and Python."
+    },
+    {
+      "title": "Custom Web Development",
+      "description": "End-to-end development of custom web applications, using modern web technologies like Django, and FastAPI."
+    }
+  ]
+}
