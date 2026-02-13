@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/portfo/static/css/main.0de69754.css",
-    "main.js": "/portfo/static/js/main.f5b17648.js",
-    "static/media/About Section Image.webp": "/portfo/static/media/About Section Image.57074b6849b1aa0ccd36.webp",
-    "static/media/project-trippy.png": "/portfo/static/media/project-trippy.05b472948a739572dcd3.png",
-    "static/media/About Section Image.png": "/portfo/static/media/About Section Image.e2a07e05651e6f46f086.png",
-    "static/media/project-movies.png": "/portfo/static/media/project-movies.d1176203c46f8a9bf2f5.png",
-    "static/media/project-fj.png": "/portfo/static/media/project-fj.4606a2958121626bcbc5.png",
-    "static/media/project-news.png": "/portfo/static/media/project-news.132a42882b5c2026264a.png",
-    "static/media/project-tax.png": "/portfo/static/media/project-tax.764b407767985bd9503d.png",
-    "static/media/avatar-2.jpg": "/portfo/static/media/avatar-2.575e0b02e365180fb7c5.jpg",
-    "static/media/project-cube.png": "/portfo/static/media/project-cube.d7d75d01185f1942913f.png",
-    "static/media/plutospace.jpg": "/portfo/static/media/plutospace.dce711b14eb37da88213.jpg",
-    "static/media/project-img-2.jpg": "/portfo/static/media/project-img-2.5bce34260a0cf86b271c.jpg",
-    "static/media/avatar-3.jpg": "/portfo/static/media/avatar-3.4177fba0db85c033398f.jpg",
-    "static/media/avatar-1.jpg": "/portfo/static/media/avatar-1.7a0954230d56d713beac.jpg",
-    "index.html": "/portfo/index.html",
-    "main.0de69754.css.map": "/portfo/static/css/main.0de69754.css.map",
-    "main.f5b17648.js.map": "/portfo/static/js/main.f5b17648.js.map"
+    "main.css": "/static/css/main.0de69754.css",
+    "main.js": "/static/js/main.e2679dd8.js",
+    "static/media/About Section Image.webp": "/static/media/About Section Image.57074b6849b1aa0ccd36.webp",
+    "static/media/project-trippy.png": "/static/media/project-trippy.05b472948a739572dcd3.png",
+    "static/media/About Section Image.png": "/static/media/About Section Image.e2a07e05651e6f46f086.png",
+    "static/media/project-movies.png": "/static/media/project-movies.d1176203c46f8a9bf2f5.png",
+    "static/media/project-fj.png": "/static/media/project-fj.4606a2958121626bcbc5.png",
+    "static/media/project-news.png": "/static/media/project-news.132a42882b5c2026264a.png",
+    "static/media/project-tax.png": "/static/media/project-tax.764b407767985bd9503d.png",
+    "static/media/avatar-2.jpg": "/static/media/avatar-2.575e0b02e365180fb7c5.jpg",
+    "static/media/project-cube.png": "/static/media/project-cube.d7d75d01185f1942913f.png",
+    "static/media/plutospace.jpg": "/static/media/plutospace.dce711b14eb37da88213.jpg",
+    "static/media/project-img-2.jpg": "/static/media/project-img-2.5bce34260a0cf86b271c.jpg",
+    "static/media/avatar-3.jpg": "/static/media/avatar-3.4177fba0db85c033398f.jpg",
+    "static/media/avatar-1.jpg": "/static/media/avatar-1.7a0954230d56d713beac.jpg",
+    "index.html": "/index.html",
+    "main.0de69754.css.map": "/static/css/main.0de69754.css.map",
+    "main.e2679dd8.js.map": "/static/js/main.e2679dd8.js.map"
   },
   "entrypoints": [
     "static/css/main.0de69754.css",
-    "static/js/main.f5b17648.js"
+    "static/js/main.e2679dd8.js"
   ]
 }
