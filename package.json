@@ -2,7 +2,7 @@
   "name": "portfolio_template_v1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rezanasirian.github.io/portfo",
+  "homepage": "https://rezanasirian.ir",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@testing-library/jest-dom": "^5.17.0",
