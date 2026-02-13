@@ -28,7 +28,7 @@ export default function Tagline() {
           </a>
           <a href={data.profile.cv_link} download>
             <button type="button" class="btn btn2">
-              download CV
+              Download CV
             </button>
           </a>
         </div>
