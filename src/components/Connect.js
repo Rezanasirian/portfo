@@ -4,7 +4,7 @@ import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
 
 import SectionHead from "./SectionHead";
-import data from "../data/content.json";
+import data from "../data/content";
 
 const CHANNELS = [
   { key: "email", label: "Email", Icon: FiMail },

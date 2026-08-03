@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 import aboutImage from "../assets/About Section Image.webp";
 
 import SectionHead from "./SectionHead";
-import data from "../data/content.json";
+import data from "../data/content";
 
 export default function About() {
   const { about_text, name } = data.profile;

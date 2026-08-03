@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 import { FiChevronDown } from "react-icons/fi";
 
 import SectionHead from "./SectionHead";
-import data from "../data/content.json";
+import data from "../data/content";
 
 export default function Experience() {
   /* The most recent role starts open - collapsing everything hides the most

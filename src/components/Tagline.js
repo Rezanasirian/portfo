@@ -2,7 +2,7 @@ import React from "react";
 import { FiMail, FiFileText } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
 
-import data from "../data/content.json";
+import data from "../data/content";
 
 export default function Tagline() {
   const { name, role, tagline, status, email, cv_link, socials, stats } =

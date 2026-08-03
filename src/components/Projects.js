@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 import ProjectCard from "./ProjectCard";
 import SectionHead from "./SectionHead";
-import data from "../data/content.json";
+import data from "../data/content";
 
 export default function Projects() {
   return (

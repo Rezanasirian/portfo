@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { FiMenu, FiX } from "react-icons/fi";
 
-import data from "../data/content.json";
+import data from "../data/content";
 
 /* Anchor names must match the <Element name="..."> wrappers in App.js */
 const NAV_ITEMS = [

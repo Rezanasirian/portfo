@@ -1,6 +1,6 @@
 import React from "react";
 
-import data from "../data/content.json";
+import data from "../data/content";
 
 export default function Footer() {
   const { name } = data.profile;
