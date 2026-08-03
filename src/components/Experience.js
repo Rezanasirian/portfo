@@ -2,53 +2,69 @@ import React, { useState } from "react";
 import data from "../data/content.json";
 
 export default function Experience() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  /* The most recent role starts open — collapsing everything hides the most
+     important content on the page behind a click. */
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
-  const toggleExpand = (index) => {
+  const toggleExpand = (index) =>
     setExpandedIndex(expandedIndex === index ? null : index);
-  };
 
   return (
-    <div className="container-fluid experiencediv">
-      <div className="text-center py-4">
-        <h1>Career Highlights</h1>
+    <section className="section experiencediv">
+      <div className="section-head">
+        <h1>Experience</h1>
       </div>
-      <div className="experience-list">
-        {data.experience.map((exp, index) => (
-          <div key={index} className="experience-item">
-            <div
+
+      {data.experience.map((exp, index) => {
+        const isOpen = expandedIndex === index;
+        const panelId = `experience-panel-${index}`;
+
+        return (
+          <article key={index} className="card-base timeline-item">
+            <button
+              type="button"
               className="experience-header"
               onClick={() => toggleExpand(index)}
+              aria-expanded={isOpen}
+              aria-controls={panelId}
             >
               <div className="experience-main">
                 <div className="experience-title-section">
-                  <h3 className="experience-title">{exp.title}</h3>
+                  <h2 className="experience-title">{exp.title}</h2>
                   <p className="experience-duration">{exp.duration}</p>
                 </div>
-                <p className="experience-company">{exp.company}</p>
+                <p className="experience-company">
+                  {exp.company}
+                  {exp.company_note && (
+                    <span className="experience-company-note">
+                      {exp.company_note}
+                    </span>
+                  )}
+                </p>
               </div>
-              <div className="expand-icon">
+              <span className="expand-icon">
                 <i
-                  className={`fas fa-chevron-down ${
-                    expandedIndex === index ? "rotated" : ""
-                  }`}
+                  className={`fas fa-chevron-down ${isOpen ? "rotated" : ""}`}
+                  aria-hidden="true"
                 ></i>
-              </div>
-            </div>
-            {expandedIndex === index && (
-              <div className="experience-content">
-                {/*<p className="experience-description">{exp.description}</p>*/}
-                            {/* Data is Split */}
-                  {exp.description.split("\n").map((paragraph, index) => (
-                    <React.Fragment key={index}>
-                      {paragraph}
-                      <p />
-                    </React.Fragment>
+              </span>
+            </button>
+
+            {isOpen && (
+              <div id={panelId} className="experience-content">
+                {exp.description
+                  .split("\n")
+                  .filter(Boolean)
+                  .map((line, lineIndex) => (
+                    <p key={lineIndex} className="experience-description">
+                      {line}
+                    </p>
                   ))}
+
                 {exp.tags && (
                   <div className="experience-tags">
-                    {exp.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="experience-tag">
+                    {exp.tags.map((tag) => (
+                      <span key={tag} className="experience-tag">
                         {tag}
                       </span>
                     ))}
@@ -56,9 +72,9 @@ export default function Experience() {
                 )}
               </div>
             )}
-          </div>
-        ))}
-      </div>
-    </div>
+          </article>
+        );
+      })}
+    </section>
   );
 }

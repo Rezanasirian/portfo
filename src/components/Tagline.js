@@ -4,35 +4,49 @@ import { Fade } from "react-awesome-reveal";
 import data from "../data/content.json";
 
 export default function Tagline() {
+  const { name, role, tagline, status, email, cv_link, socials } = data.profile;
+
   return (
-    <div className="container-fluid taglinediv text-center">
-      <div className="background-overlay"></div>
-
-      <Fade direction="down" triggerOnce="true">
-        <h1>Hi, I'm {data.profile.name}</h1>
-      </Fade>
-      <Fade cascade>
-        <h6 className="fw-light">
-          {/* A Web Developer who creates websites and do Network Marketing for
-          startups and founders. */}
-          {data.profile.tagline}
-        </h6>
+    <header className="taglinediv">
+      <Fade direction="down" triggerOnce>
+        {status && (
+          <p className="hero-status">
+            <span className="hero-status-dot" aria-hidden="true"></span>
+            {status}
+          </p>
+        )}
+        <h1>{name}</h1>
+        <p className="hero-role">{role}</p>
       </Fade>
 
-      <Fade direction="up">
-        <div className="my-4">
-          <a href={`mailto:${data.profile.email}`}>
-            <button type="button" class="btn btn1">
-              Contact me
-            </button>
+      <Fade direction="up" triggerOnce>
+        <p className="hero-tagline">{tagline}</p>
+
+        <div className="hero-actions">
+          <a className="btn2" href={`mailto:${email}`}>
+            <i className="fa-solid fa-envelope" aria-hidden="true"></i>
+            Contact me
           </a>
-          <a href={data.profile.cv_link} download>
-            <button type="button" class="btn btn2">
-              Download CV
-            </button>
+          <a
+            className="btn1"
+            href={cv_link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-solid fa-file-lines" aria-hidden="true"></i>
+            Résumé
+          </a>
+          <a
+            className="btn1"
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-github" aria-hidden="true"></i>
+            GitHub
           </a>
         </div>
       </Fade>
-    </div>
+    </header>
   );
 }

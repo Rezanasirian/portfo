@@ -1,87 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 
-export default function Navbar() {
-  return (
-    <div className="container-fluid text-center navbardiv sticky-top">
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="home"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        Home
-      </Link>
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="education"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        Education
-      </Link>
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="experience"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        Experience
-      </Link>
+import data from "../data/content.json";
 
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="projects"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        Projects
-      </Link>
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="about"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        About me
-      </Link>
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="services"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        Services
-      </Link>
-      <Link
-        className="navbar-link"
-        activeClass="active"
-        to="contact"
-        spy={true}
-        smooth={true}
-        offset={-70} // Adjust the offset if you have a fixed navbar
-        duration={500}
-      >
-        Contact
-      </Link>
-    </div>
+/* Anchor names must match the <Element name="..."> wrappers in App.js */
+const NAV_ITEMS = [
+  { to: "experience", label: "Experience" },
+  { to: "projects", label: "Projects" },
+  { to: "stack", label: "Stack" },
+  { to: "about", label: "About" },
+  { to: "education", label: "Education" },
+  { to: "contact", label: "Contact" },
+];
+
+const SCROLL_PROPS = {
+  activeClass: "active",
+  spy: true,
+  smooth: true,
+  offset: -64, // height of the sticky navbar
+  duration: 500,
+};
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <nav className="navbardiv" aria-label="Main">
+      <div className="navbar-inner">
+        <Link className="navbar-brand-link" to="home" {...SCROLL_PROPS}>
+          {data.profile.name}
+        </Link>
+
+        <button
+          type="button"
+          className="navbar-toggle"
+          aria-expanded={open}
+          aria-controls="nav-links"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <i className={`fa-solid ${open ? "fa-xmark" : "fa-bars"}`}></i>
+        </button>
+
+        <div id="nav-links" className={`navbar-links ${open ? "open" : ""}`}>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.to}
+              className="navbar-link"
+              to={item.to}
+              onClick={() => setOpen(false)}
+              {...SCROLL_PROPS}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </nav>
   );
 }

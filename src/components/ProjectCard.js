@@ -1,34 +1,76 @@
 import React from "react";
-import project1 from "../assets/project-img-2.jpg";
 
-export default function ProjectCard(props) {
+export default function ProjectCard({
+  title,
+  year,
+  problem,
+  approach,
+  result,
+  url,
+  tech,
+  img,
+}) {
   return (
-    <div className="card projectcard">
-      <div className="row">
-        <div className="col-md py-2">
-          <h2 className="fw-bold">{props.title}</h2>
-          <p>{props.content}</p>
-          <h6 className="projects-tech mt-2">{props.tech}</h6>
+    <article className="card-base projectcard">
+      <div className="project-grid">
+        <div>
+          <div className="experience-title-section">
+            <h2 className="project-title">{title}</h2>
+            {year && <p className="experience-duration">{year}</p>}
+          </div>
+
+          {problem && (
+            <p className="project-content">
+              <strong>Problem. </strong>
+              {problem}
+            </p>
+          )}
+          {approach && (
+            <p className="project-content" style={{ marginTop: "0.75rem" }}>
+              <strong>Approach. </strong>
+              {approach}
+            </p>
+          )}
+          {result && (
+            <p className="project-content" style={{ marginTop: "0.75rem" }}>
+              <strong>Result. </strong>
+              {result}
+            </p>
+          )}
+
+          {tech && (
+            <div className="project-meta">
+              {tech.map((item) => (
+                <span key={item} className="stack-chip">
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
+
           <a
-            // href={`https://${props.url}`}
-            href={props.url}
-            target="blank"
+            className="btn1"
+            href={url}
+            target="_blank"
             rel="noopener noreferrer"
           >
-            <button type="button" className="btn btn-primary btn1 px-4">
-              <i className="fa-solid fa-up-right-from-square"></i> Project Link
-            </button>
+            <i
+              className="fa-solid fa-up-right-from-square"
+              aria-hidden="true"
+            ></i>
+            View project
           </a>
         </div>
 
-        <div className="col-md">
+        <div>
           <img
-            src={props.img ? props.img : project1}
-            alt="img-project"
-            className="img-fluid project-img"
+            src={img}
+            alt={`Screenshot of ${title}`}
+            className="project-img"
+            loading="lazy"
           />
         </div>
       </div>
-    </div>
+    </article>
   );
 }

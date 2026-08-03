@@ -1,77 +1,89 @@
 {
   "profile": {
     "name": "Reza Nasirian",
-    "tagline": "AI Engineer specializing in LLM-based multi-agent systems and Business Intelligence solutions.",
-    "email": "rezanasirian@gmail.com",
+    "role": "AI Engineer",
+    "tagline": "I build LLM agents that let people talk to their data — and the data platforms underneath them.",
+    "status": "Open to remote & relocation roles",
+    "email": "rezanasirian18@gmail.com",
     "cv_link": "https://drive.google.com/file/d/1jJdppnKPn-Dwu6PvmLkQchF-l8TzfOaO/view?usp=sharing",
-    "about_text": "I'm an AI & BI Engineer with over 4 years of professional experience – starting my career as a Business Intelligence Developer and transitioning into AI Engineering over the past year.\n\nDuring my 3+ years in BI (2021–2025), I designed and developed end-to-end reporting solutions, interactive dashboards (Dundas BI), multi-dimensional cubes (SSAS), and API generators, while working extensively with SQL, Python, and JavaScript.\n\nIn the last year (2025–present), I've specialized in LLM-based systems. I built a conversational multi-agent framework that enables natural language interaction with structured data – integrating LangChain, FastAPI, and real-time SSE. I also developed a graph-based RAG chatbot for Iranian tax law, significantly improving retrieval accuracy.\n\nI'm passionate about bridging the gap between traditional data systems and modern AI, and I'm currently exploring fine-tuning and local deployment of LLMs for privacy-aware enterprise solutions.",
+    "about_text": "Most people who build AI systems have never had to answer for a wrong number in a board report. I have. I spent three years as a BI developer — modelling cubes, writing the queries behind dashboards, and learning exactly how messy real enterprise data is before it reaches a chart.\n\nThat is why I moved into AI engineering rather than starting there. When I build a multi-agent system that writes MDX against a production cube, I already know where the joins lie and which numbers users will not forgive being wrong. The retrieval problems I care about — a tax statute whose meaning depends on its position in a hierarchy — are structural problems, not embedding problems.\n\nRight now I am working on fine-tuning and local model deployment, because the enterprises with the most interesting data are the ones that cannot send it to an external API.",
     "socials": {
+      "github": "https://github.com/Rezanasirian",
       "linkedin": "https://linkedin.com/in/reza-nasirian",
       "telegram": "https://t.me/Reza_Nasirian",
-      "email": "rezanasirian@gmail.com"
+      "email": "rezanasirian18@gmail.com"
     }
   },
   "projects": [
     {
-      "title": "Tax Law RAG Chatbot",
-      "content": "Developed a RAG system focused on Iranian tax laws. Created a chatbot to answer queries from taxpayers and the general public using Qdrant vector store, LangChain, Python, and FastAPI.",
+      "title": "TaxSage — Graph-based RAG for Tax Law",
+      "year": "2025",
+      "problem": "Iranian tax law is a hierarchy: articles carry notes, notes carry amendments, and a clause often means nothing without its parent. Flat vector search returns passages that read similarly but sit in the wrong branch, so the chatbot cites the wrong rule.",
+      "approach": "Modelled the statute as a graph so retrieval follows the legal hierarchy before ranking, backed by a Qdrant vector store and orchestrated with LangChain. Served over FastAPI to taxpayers and the general public.",
       "url": "http://taxsage.son.ir/",
-      "tech": "#LangChain #Python #FastAPI #Qdrant",
+      "tech": ["LangChain", "Qdrant", "FastAPI", "Python", "Graph RAG"],
       "img": "project-tax.png"
     },
     {
-      "title": "CubeAgent - Multi-Agent Conversational  AI System",
-      "content": "Designed and  developed a multi-agent framework enabling conversational interaction with structured data using LLMs. Implemented specialized agents for data analysis, query generation (MDX), and visualization.",
+      "title": "CubeAgent — Conversational Multi-Agent BI",
+      "year": "2025",
+      "problem": "Business users needed answers from OLAP cubes but could not write MDX, so every question became a ticket for an analyst — and the analyst became the bottleneck.",
+      "approach": "Built a multi-agent framework where specialized agents split the work: one interprets the question, one generates and validates MDX against the cube schema, one chooses the visualization. Responses stream over Server-Sent Events, and the orchestration layer is modular so agents can be swapped without touching the core.",
       "url": "http://cubeagent.son.ir/",
-      "tech": "#LangChain #Python #FastAPI",
+      "tech": ["LangChain", "FastAPI", "Python", "MDX", "SSE"],
       "img": "project-cube.png"
     }
   ],
-  "testimonials": [],
   "experience": [
     {
-      "title": "AI Engineer | LLM Agents",
+      "title": "AI Engineer — LLM Agents",
       "company": "SON Corporate Group",
-      "duration": "April 2025 - Present",
-      "description": "• Built a multi-agent system for conversational data interaction and analysis, developing specialized agents for data analysis, MDX query generation, and visualization using LangChain.  \n• Developed a Retrieval-Augmented Generation (RAG) system centered on Iranian tax laws, creating a chatbot for answering queries from taxpayers and the public using Qdrant vector store, LangChain, Python, and FastAPI, while implementing a graph-based structure to represent tax law hierarchies for better retrieval accuracy. \n• Implemented real-time communication via Server-Sent Events (SSE) and modular orchestration to facilitate seamless agent collaboration.\n• Currently exploring fine-tuning techniques and local model deployment to enhance system autonomy.",
-      "tags": ["LangChain", "FastAPI", "Python", "RAG"]
+      "company_note": "Enterprise software and data group",
+      "duration": "April 2025 — Present",
+      "description": "• Built and shipped a multi-agent system that lets business users query OLAP cubes in plain language, with specialized agents for interpretation, MDX generation and visualization coordinated through LangChain.\n• Designed a graph-based RAG system over Iranian tax law, modelling the statute hierarchy as a graph so retrieval follows legal structure rather than flat similarity.\n• Implemented streaming responses over Server-Sent Events and a modular orchestration layer, so new agents can be added without changes to the core.\n• Working on fine-tuning and local model deployment to remove the dependency on external APIs for privacy-sensitive data.",
+      "tags": ["LangChain", "FastAPI", "Python", "RAG", "Qdrant", "MDX"]
     },
     {
       "title": "Business Intelligence Developer",
       "company": "SON Corporate Group",
-      "duration": "July 2021 - April 2025",
-      "description": " • Developed backend API queries to efficiently retrieve and provide data for reporting purposes.\n• Created an API generator tool for generating APIs from arbitrary database tables without coding, including adding conditions to the generated APIs.\n• Composed complex queries and extracted report data to support business intelligence efforts.\n• Designed and developed interactive BI dashboards using Dundas BI, enabling data-driven decision-making.\n• Utilized JavaScript to enhance dashboard functionality and customize features.\n• Integrated web services data using Python, expanding data sources for reporting.\n• Utilized SSAS (SQL Server Analysis Services) to design multi-dimensional data cubes.\n• Worked with Postman to test and validate APIs, ensuring data accuracy and reliability.",
-      "tags": ["Dundas BI", "JavaScript", "Python", "SQL", "SSAS", "API", "Backend"]
+      "company_note": "Enterprise software and data group",
+      "duration": "July 2021 — April 2025",
+      "description": "• Designed and shipped interactive dashboards in Dundas BI that the group used for day-to-day decision-making.\n• Built an API generator that produces REST endpoints — including filter conditions — from arbitrary database tables without writing code.\n• Modelled multi-dimensional OLAP cubes in SSAS and wrote the MDX and SQL behind the reporting layer.\n• Extended dashboard behaviour with custom JavaScript beyond what the platform offered out of the box.\n• Integrated third-party web services with Python to widen the range of reportable data sources.",
+      "tags": ["Dundas BI", "SSAS", "SQL", "MDX", "Python", "JavaScript", "REST"]
     }
   ],
-  "services": [
+  "stack": [
     {
-      "title": "AI & ML Solutions",
-      "description": "Development of conversational AI systems, data analysis, and machine learning solutions tailored to your business needs."
+      "group": "LLM & AI",
+      "items": ["LangChain", "RAG", "Graph RAG", "Multi-agent systems", "Qdrant", "Prompt engineering", "Fine-tuning"]
     },
     {
-      "title": "Custom Web Development",
-      "description": "End-to-end development of custom web applications, using modern web technologies like Django, and FastAPI."
+      "group": "Data & BI",
+      "items": ["SQL", "SSAS", "MDX", "OLAP cubes", "Dundas BI", "Data modeling"]
     },
     {
-      "title": "Business Intelligence",
-      "description": "Interactive BI dashboards and reporting solutions using tools like Dundas BI, SQL, and Python."
+      "group": "Backend",
+      "items": ["FastAPI", "REST APIs", "Server-Sent Events", "Postman"]
+    },
+    {
+      "group": "Languages",
+      "items": ["Python", "SQL", "JavaScript"]
     }
   ],
   "education": [
-  {
-    "degree": "Master of Science in Industrial Engineering",
-    "field": "Systems modeling and data analysis",
-    "institution": "University of Tehran",
-    "duration": "2023 - Present",
-    "description": "Focus on advanced data analysis, optimization, and modeling of complex systems. Research involves application of machine learning and LLMs in industrial contexts."
-  },
-  {
-    "degree": "Bachelor of Science in Industrial Engineering",
-    "field": "Industrial Engineering",
-    "institution": "Iran University of Science and Technology (IUST)",
-    "duration": "2018 - 2023",
-    "description": "Comprehensive education in industrial engineering principles, including operations research, production planning, quality control, and information systems."
-  }
-]
+    {
+      "degree": "M.Sc. Industrial Engineering",
+      "field": "Systems modeling and data analysis",
+      "institution": "University of Tehran",
+      "duration": "2023 — Present",
+      "description": "Focus on advanced data analysis, optimization, and modeling of complex systems. Research involves applying machine learning and LLMs in industrial contexts."
+    },
+    {
+      "degree": "B.Sc. Industrial Engineering",
+      "field": "Industrial Engineering",
+      "institution": "Iran University of Science and Technology (IUST)",
+      "duration": "2018 — 2023",
+      "description": "Operations research, production planning, quality control, and information systems."
+    }
+  ]
 }

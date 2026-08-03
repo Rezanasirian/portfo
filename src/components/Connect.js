@@ -1,77 +1,45 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
 
 import data from "../data/content.json";
 
+const CHANNELS = [
+  { key: "email", label: "Email", icon: "fa-solid fa-envelope-circle-check" },
+  { key: "github", label: "GitHub", icon: "fa-brands fa-github" },
+  { key: "linkedin", label: "LinkedIn", icon: "fa-brands fa-linkedin" },
+  { key: "telegram", label: "Telegram", icon: "fa-brands fa-telegram" },
+];
+
 export default function Connect() {
+  const { socials, email } = data.profile;
+
   return (
-    <div className="container-fluid connectdiv">
-      <div className="text-center py-4">
-        <h1>Connect with me!</h1>
+    <div className="section connectdiv">
+      <div className="text-center">
+        <h1>Get in touch</h1>
+        <p className="section-lead">
+          Open to remote and relocation roles in AI engineering.
+        </p>
       </div>
 
-      <div className="row">
-        <div className="col-md card text-center connect-card">
-          <a
-            href={`mailto:${data.profile.email}`}
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-solid fa-envelope-circle-check iconf fa-3x"></i>
-          </a>
-          <h5 className="py-2">Mail me</h5>
-        </div>
-        {/*<div className="col-md card text-center connect-card">*/}
-        {/*  <a*/}
-        {/*    href={data.profile.socials.instagram}*/}
-        {/*    target="blank"*/}
-        {/*    rel="noopener noreferrer"*/}
-        {/*  >*/}
-        {/*    <i class="fa-brands fa-instagram fa-3x iconf"></i>*/}
-        {/*  </a>*/}
+      <div className="connect-grid">
+        {CHANNELS.map(({ key, label, icon }) => {
+          const href = key === "email" ? `mailto:${email}` : socials[key];
+          if (!href) return null;
 
-        {/*  <h5 className="py-2">Instagram</h5>*/}
-        {/*</div>*/}
-        <div className="col-md card text-center connect-card">
-          <a
-            href={data.profile.socials.telegram}
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-telegram fa-3x iconf"></i>
-          </a>
-          <h5 className="py-2">Telegram</h5>
-        </div>
-        <div className="col-md card text-center connect-card">
-          <a
-            href={data.profile.socials.linkedin}
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-linkedin fa-3x iconf"></i>
-          </a>
-          <h5 className="py-2">Linked-in</h5>
-        </div>
+          return (
+            <a
+              key={key}
+              className="card-base connect-card"
+              href={href}
+              target={key === "email" ? undefined : "_blank"}
+              rel="noopener noreferrer"
+            >
+              <i className={`${icon} iconf fa-2x`} aria-hidden="true"></i>
+              <span className="connect-label">{label}</span>
+            </a>
+          );
+        })}
       </div>
-
-      {/*<Fade direction="down" delay={2}>*/}
-      {/*  <div className="text-center">*/}
-      {/*    <h6 className="pt-4">*/}
-      {/*      /!* <span className="promo-box"> *!/*/}
-      {/*      <i class="fa-solid fa-wand-magic-sparkles"></i> Made with{" "}*/}
-      {/*      <i class="fa-solid fa-heart iconred"></i> by*/}
-      {/*      <a*/}
-      {/*        href="https://anshulwork.netlify.app/"*/}
-      {/*        className="Anshul-link"*/}
-      {/*        target="blank"*/}
-      {/*      >*/}
-      {/*        {" "}*/}
-      {/*        Anshul Gora*/}
-      {/*      </a>*/}
-      {/*      /!* </span> *!/*/}
-      {/*    </h6>*/}
-      {/*  </div>*/}
-      {/*</Fade>*/}
     </div>
   );
 }

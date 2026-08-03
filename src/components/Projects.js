@@ -4,21 +4,20 @@ import data from "../data/content.json";
 
 export default function Projects() {
   return (
-    <div className="container-fluid projectsdiv">
-      <div className="text-center">
-        <h1>My work :)</h1>
+    <section className="section projectsdiv">
+      <div className="section-head">
+        <h1>Projects</h1>
       </div>
 
-      {data.projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          title={project.title}
-          content={project.content}
-          url={project.url}
-          img={require(`../assets/${project.img}`)}
-          tech={project.tech}
-        />
-      ))}
-    </div>
+      <div className="project-list">
+        {data.projects.map((project) => (
+          <ProjectCard
+            key={project.title}
+            {...project}
+            img={require(`../assets/${project.img}`)}
+          />
+        ))}
+      </div>
+    </section>
   );
 }

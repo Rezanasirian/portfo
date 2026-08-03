@@ -1,36 +1,36 @@
 import React from "react";
-import anshul from "../assets/About Section Image.webp";
+import aboutImage from "../assets/About Section Image.webp";
 
 import data from "../data/content.json";
 
 export default function About() {
-  const { profile } = data;
-  const { about_text } = profile;
+  const { about_text, name } = data.profile;
+
   return (
-    <div className="container-fluid aboutdiv">
-      <div className="text-center pb-4">
-        <h1>About me</h1>
+    <section className="section aboutdiv">
+      <div className="section-head">
+        <h1>About</h1>
       </div>
 
-      <div className="row">
-        <div className="col-md aboutdivcol text-center">
+      <div className="about-grid">
+        <div>
           <img
-            src={anshul}
-            alt="about-mishra-img"
-            className="img-fluid about-img"
+            src={aboutImage}
+            alt={name}
+            className="about-img"
+            loading="lazy"
           />
         </div>
 
-        <div className="col-md aboutdivcol">
-          {/* Data is Split */}
-          {about_text.split("\n").map((paragraph, index) => (
-            <React.Fragment key={index}>
-              {paragraph}
-              <br />
-            </React.Fragment>
-          ))}
+        <div className="about-text">
+          {about_text
+            .split("\n")
+            .filter(Boolean)
+            .map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
