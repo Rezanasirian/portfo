@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d695746b.css",
-    "main.js": "/static/js/main.2f1646b2.js",
+    "main.js": "/static/js/main.56c1a9d1.js",
     "static/media/About Section Image.webp": "/static/media/About Section Image.cb49ca10c5b99df88a13.webp",
     "static/media/project-cube.webp": "/static/media/project-cube.3dc7945fce54100c0616.webp",
     "static/media/project-tax.webp": "/static/media/project-tax.cd459fc016317df0aa4c.webp",
@@ -9,6 +9,6 @@
   },
   "entrypoints": [
     "static/css/main.d695746b.css",
-    "static/js/main.2f1646b2.js"
+    "static/js/main.56c1a9d1.js"
   ]
 }
