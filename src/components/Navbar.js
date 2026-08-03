@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
+import { FiMenu, FiX } from "react-icons/fi";
 
 import data from "../data/content.json";
 
@@ -39,7 +40,7 @@ export default function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((prev) => !prev)}
         >
-          <i className={`fa-solid ${open ? "fa-xmark" : "fa-bars"}`}></i>
+          {open ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
         </button>
 
         <div id="nav-links" className={`navbar-links ${open ? "open" : ""}`}>

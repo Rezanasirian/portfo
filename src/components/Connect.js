@@ -1,12 +1,16 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
+import { FiMail } from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
 
+import SectionHead from "./SectionHead";
 import data from "../data/content.json";
 
 const CHANNELS = [
-  { key: "email", label: "Email", icon: "fa-solid fa-envelope-circle-check" },
-  { key: "github", label: "GitHub", icon: "fa-brands fa-github" },
-  { key: "linkedin", label: "LinkedIn", icon: "fa-brands fa-linkedin" },
-  { key: "telegram", label: "Telegram", icon: "fa-brands fa-telegram" },
+  { key: "email", label: "Email", Icon: FiMail },
+  { key: "github", label: "GitHub", Icon: FaGithub },
+  { key: "linkedin", label: "LinkedIn", Icon: FaLinkedin },
+  { key: "telegram", label: "Telegram", Icon: FaTelegram },
 ];
 
 export default function Connect() {
@@ -14,32 +18,35 @@ export default function Connect() {
 
   return (
     <div className="section connectdiv">
-      <div className="text-center">
-        <h1>Get in touch</h1>
-        <p className="section-lead">
-          Open to remote and relocation roles in AI engineering.
-        </p>
-      </div>
+      <Fade direction="up" triggerOnce fraction={0.15}>
+        <SectionHead
+          index="06"
+          eyebrow="Contact"
+          title="Get in touch"
+          lead="Open to remote and relocation roles in AI engineering."
+          centered
+        />
 
-      <div className="connect-grid">
-        {CHANNELS.map(({ key, label, icon }) => {
-          const href = key === "email" ? `mailto:${email}` : socials[key];
-          if (!href) return null;
+        <div className="connect-grid">
+          {CHANNELS.map(({ key, label, Icon }) => {
+            const href = key === "email" ? `mailto:${email}` : socials[key];
+            if (!href) return null;
 
-          return (
-            <a
-              key={key}
-              className="card-base connect-card"
-              href={href}
-              target={key === "email" ? undefined : "_blank"}
-              rel="noopener noreferrer"
-            >
-              <i className={`${icon} iconf fa-2x`} aria-hidden="true"></i>
-              <span className="connect-label">{label}</span>
-            </a>
-          );
-        })}
-      </div>
+            return (
+              <a
+                key={key}
+                className="card-base connect-card"
+                href={href}
+                target={key === "email" ? undefined : "_blank"}
+                rel="noopener noreferrer"
+              >
+                <Icon className="iconf" size={26} aria-hidden="true" />
+                <span className="connect-label">{label}</span>
+              </a>
+            );
+          })}
+        </div>
+      </Fade>
     </div>
   );
 }

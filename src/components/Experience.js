@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { Fade } from "react-awesome-reveal";
+import { FiChevronDown } from "react-icons/fi";
+
+import SectionHead from "./SectionHead";
 import data from "../data/content.json";
 
 export default function Experience() {
-  /* The most recent role starts open — collapsing everything hides the most
+  /* The most recent role starts open - collapsing everything hides the most
      important content on the page behind a click. */
   const [expandedIndex, setExpandedIndex] = useState(0);
 
@@ -11,70 +15,94 @@ export default function Experience() {
 
   return (
     <section className="section experiencediv">
-      <div className="section-head">
-        <h1>Experience</h1>
-      </div>
+      <Fade direction="up" triggerOnce fraction={0.15}>
+        <SectionHead
+          index="01"
+          eyebrow="Experience"
+          title="Where I've worked"
+        />
 
-      {data.experience.map((exp, index) => {
-        const isOpen = expandedIndex === index;
-        const panelId = `experience-panel-${index}`;
+        <div className="timeline">
+          {data.experience.map((exp, index) => {
+            const isOpen = expandedIndex === index;
+            const panelId = `experience-panel-${index}`;
 
-        return (
-          <article key={index} className="card-base timeline-item">
-            <button
-              type="button"
-              className="experience-header"
-              onClick={() => toggleExpand(index)}
-              aria-expanded={isOpen}
-              aria-controls={panelId}
-            >
-              <div className="experience-main">
-                <div className="experience-title-section">
-                  <h2 className="experience-title">{exp.title}</h2>
-                  <p className="experience-duration">{exp.duration}</p>
-                </div>
-                <p className="experience-company">
-                  {exp.company}
-                  {exp.company_note && (
-                    <span className="experience-company-note">
-                      {exp.company_note}
-                    </span>
-                  )}
-                </p>
-              </div>
-              <span className="expand-icon">
-                <i
-                  className={`fas fa-chevron-down ${isOpen ? "rotated" : ""}`}
-                  aria-hidden="true"
-                ></i>
-              </span>
-            </button>
-
-            {isOpen && (
-              <div id={panelId} className="experience-content">
-                {exp.description
-                  .split("\n")
-                  .filter(Boolean)
-                  .map((line, lineIndex) => (
-                    <p key={lineIndex} className="experience-description">
-                      {line}
+            return (
+              <article
+                key={index}
+                className={`card-base timeline-item${
+                  exp.current ? " timeline-item--current" : ""
+                }`}
+              >
+                <button
+                  type="button"
+                  className="experience-header"
+                  onClick={() => toggleExpand(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                >
+                  <div className="experience-main">
+                    <div className="experience-title-section">
+                      <h3 className="experience-title">{exp.title}</h3>
+                      <p className="experience-duration">{exp.duration}</p>
+                    </div>
+                    <p className="experience-company">
+                      {exp.company}
+                      {exp.company_note && (
+                        <span className="experience-company-note">
+                          {exp.company_note}
+                        </span>
+                      )}
                     </p>
-                  ))}
-
-                {exp.tags && (
-                  <div className="experience-tags">
-                    {exp.tags.map((tag) => (
-                      <span key={tag} className="experience-tag">
-                        {tag}
-                      </span>
-                    ))}
                   </div>
-                )}
-              </div>
-            )}
-          </article>
-        );
-      })}
+                  <span className="expand-icon">
+                    <FiChevronDown
+                      className={isOpen ? "rotated" : undefined}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </button>
+
+                {/* Stays mounted so closing animates too. `inert` keeps the
+                    collapsed content out of the tab order and the a11y tree,
+                    since it is still technically rendered. */}
+                <div
+                  id={panelId}
+                  className={`experience-panel${isOpen ? " open" : ""}`}
+                >
+                  <div inert={isOpen ? undefined : ""}>
+                    <div className="experience-content">
+                      {/* A real list. These were literal "•" characters in
+                          the JSON hung off a negative text-indent, so nothing
+                          but a sighted reader could tell it was a list. */}
+                      <ul className="experience-bullets">
+                        {exp.description
+                          .split("\n")
+                          .filter(Boolean)
+                          .map((line, lineIndex) => (
+                            <li key={lineIndex}>
+                              {line.replace(/^[•\s]+/, "")}
+                            </li>
+                          ))}
+                      </ul>
+
+                      {exp.tags && (
+                        <div className="experience-tags">
+                          {exp.tags.map((tag) => (
+                            <span key={tag} className="experience-tag">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </Fade>
     </section>
   );
 }

@@ -1,4 +1,15 @@
 import React from "react";
+import { FiExternalLink } from "react-icons/fi";
+
+/* The frame's address bar shows where the project actually lives. Falls back
+   to nothing rather than throwing if a url is ever relative or malformed. */
+function hostnameOf(url) {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return "";
+  }
+}
 
 export default function ProjectCard({
   title,
@@ -15,28 +26,32 @@ export default function ProjectCard({
       <div className="project-grid">
         <div>
           <div className="experience-title-section">
-            <h2 className="project-title">{title}</h2>
+            <h3 className="project-title">{title}</h3>
             {year && <p className="experience-duration">{year}</p>}
           </div>
 
-          {problem && (
-            <p className="project-content">
-              <strong>Problem. </strong>
-              {problem}
-            </p>
-          )}
-          {approach && (
-            <p className="project-content" style={{ marginTop: "0.75rem" }}>
-              <strong>Approach. </strong>
-              {approach}
-            </p>
-          )}
-          {result && (
-            <p className="project-content" style={{ marginTop: "0.75rem" }}>
-              <strong>Result. </strong>
-              {result}
-            </p>
-          )}
+          {/* Labelled rather than run-in bold, so the three parts of the story
+              can be scanned without being read. */}
+          <dl className="project-dl">
+            {problem && (
+              <>
+                <dt>Problem</dt>
+                <dd>{problem}</dd>
+              </>
+            )}
+            {approach && (
+              <>
+                <dt>Approach</dt>
+                <dd>{approach}</dd>
+              </>
+            )}
+            {result && (
+              <>
+                <dt>Result</dt>
+                <dd>{result}</dd>
+              </>
+            )}
+          </dl>
 
           {tech && (
             <div className="project-meta">
@@ -48,27 +63,34 @@ export default function ProjectCard({
             </div>
           )}
 
+          {/* Still the only link in the card - CSS stretches its hit area over
+              the whole card, so there is one tab stop rather than three. */}
           <a
-            className="btn1"
+            className="btn1 project-link"
             href={url}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i
-              className="fa-solid fa-up-right-from-square"
-              aria-hidden="true"
-            ></i>
+            <FiExternalLink aria-hidden="true" />
             View project
           </a>
         </div>
 
-        <div>
-          <img
-            src={img}
-            alt={`Screenshot of ${title}`}
-            className="project-img"
-            loading="lazy"
-          />
+        <div className="project-media">
+          <div className="project-frame">
+            <div className="project-frame-bar" aria-hidden="true">
+              <span className="project-frame-dot"></span>
+              <span className="project-frame-dot"></span>
+              <span className="project-frame-dot"></span>
+              <span className="project-frame-url">{hostnameOf(url)}</span>
+            </div>
+            <img
+              src={img}
+              alt={`Screenshot of ${title}`}
+              className="project-img"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </article>

@@ -1,6 +1,6 @@
 # rezanasirian.ir
 
-Personal portfolio of Reza Nasirian — AI & BI Engineer.
+Personal portfolio of Reza Nasirian - AI & BI Engineer.
 
 Single-page React app. All copy lives in [`src/data/content.json`](src/data/content.json);
 components are presentational and read from it, so content changes never require touching JSX.
@@ -8,7 +8,7 @@ components are presentational and read from it, so content changes never require
 ## Stack
 
 - React 18 via Create React App (`react-scripts` 5)
-- Font Awesome 6 from CDN in [`public/index.html`](public/index.html) — no CSS framework;
+- Font Awesome 6 from CDN in [`public/index.html`](public/index.html) - no CSS framework;
   layout is hand-written CSS grid/flexbox on the tokens in `index.css`
 - `react-scroll` for section navigation, `react-awesome-reveal` for entrance animations
 - Hand-written design tokens and layout in [`src/index.css`](src/index.css)
@@ -41,7 +41,7 @@ npm run deploy    # publishes build/ to gh-pages
 | --- | --- |
 | Name, tagline, about text, CV link, socials | `profile` in `content.json` |
 | Job history (accordion) | `experience[]` |
-| Project cards | `projects[]` — `img` resolves against `src/assets/` |
+| Project cards | `projects[]` - `img` resolves against `src/assets/` |
 | Tech stack groups | `stack[]` |
 | Degrees | `education[]` |
 

@@ -1,39 +1,47 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
+import { FaGraduationCap } from "react-icons/fa6";
+
+import SectionHead from "./SectionHead";
 import data from "../data/content.json";
 
 export default function Education() {
   return (
     <section className="section educationdiv">
-      <div className="section-head">
-        <h1>Education</h1>
-      </div>
+      <Fade direction="up" triggerOnce fraction={0.15}>
+        <SectionHead index="05" eyebrow="Education" title="Where I studied" />
 
-      {data.education.map((item) => (
-        <article
-          key={item.degree}
-          className="card-base timeline-item education-item"
-        >
-          <div className="education-title-section">
-            <div className="education-title-wrapper">
-              <i
-                className="fas fa-graduation-cap education-icon"
-                aria-hidden="true"
-              ></i>
-              <h2 className="education-title">{item.degree}</h2>
-            </div>
-            <p className="education-duration">{item.duration}</p>
-          </div>
+        <div className="timeline">
+          {data.education.map((item) => (
+            <article
+              key={item.degree}
+              className={`card-base timeline-item education-item${
+                item.current ? " timeline-item--current" : ""
+              }`}
+            >
+              <div className="education-title-section">
+                <div className="education-title-wrapper">
+                  <FaGraduationCap
+                    className="education-icon"
+                    aria-hidden="true"
+                  />
+                  <h3 className="education-title">{item.degree}</h3>
+                </div>
+                <p className="education-duration">{item.duration}</p>
+              </div>
 
-          <p className="education-institution">
-            {item.institution}
-            <span className="education-field">{item.field}</span>
-          </p>
+              <p className="education-institution">
+                {item.institution}
+                <span className="education-field">{item.field}</span>
+              </p>
 
-          {item.description && (
-            <p className="education-description">{item.description}</p>
-          )}
-        </article>
-      ))}
+              {item.description && (
+                <p className="education-description">{item.description}</p>
+              )}
+            </article>
+          ))}
+        </div>
+      </Fade>
     </section>
   );
 }
