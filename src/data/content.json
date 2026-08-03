@@ -8,7 +8,7 @@
     "cv_link": "https://drive.google.com/file/d/1jJdppnKPn-Dwu6PvmLkQchF-l8TzfOaO/view?usp=sharing",
     "stats": [
       { "value": "4 yrs", "label": "BI & data modelling" },
-      { "value": "2", "label": "Agent systems in production" },
+      { "value": "2", "label": "Agent systems" },
       { "value": "M.Sc.", "label": "University of Tehran" }
     ],
     "about_text": "Most people who build AI systems have never had to answer for a wrong number in a board report. I have. I spent three years as a BI developer - modelling cubes, writing the queries behind dashboards, and learning exactly how messy real enterprise data is before it reaches a chart.\n\nThat is why I moved into AI engineering rather than starting there. When I build a multi-agent system that writes MDX against a production cube, I already know where the joins lie and which numbers users will not forgive being wrong. The retrieval problems I care about - a tax statute whose meaning depends on its position in a hierarchy - are structural problems, not embedding problems.\n\nRight now most of my time goes to CubeAgent - extending what it can do, and building the evaluation setup around it. An agent that is right most of the time is only useful once you can prove which times those are.",

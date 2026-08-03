@@ -507,34 +507,59 @@ p {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: clamp(4rem, 12vw, 7rem) clamp(1.25rem, 5vw, 2.5rem);
+  padding: clamp(3rem, 9vw, 5.5rem) clamp(1.25rem, 5vw, 2.5rem);
   background-color: var(--bg-color);
-  background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
-    linear-gradient(to right, var(--border-color) 1px, transparent 1px);
-  background-size: 48px 48px;
 }
 
-/* Radial wash over the grid. The previous overlay used z-index:-1 inside a
-   parent that creates no stacking context, so it painted behind the parent's
-   own background and was never visible. */
+/* The grid lives on its own layer so it can be masked. Painted at full
+   strength it ran to every edge at the same weight and became the loudest
+   thing on the page - the mask dissolves it outward from behind the name so
+   it sits under the content rather than competing with it. */
 .taglinediv::before {
   content: "";
   position: absolute;
   inset: 0;
+  background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 70% at 50% 8%,
+    #000 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    transparent 85%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 70% at 50% 8%,
+    #000 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    transparent 85%
+  );
+  pointer-events: none;
+}
+
+/* Radial wash over the grid. Built from --accent-text at low alpha rather
+   than --accent at high alpha: the dark red read as a brown smudge against
+   the near-black background instead of as light. */
+.taglinediv::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: radial-gradient(
-    ellipse 80% 60% at 50% 0%,
-    rgba(187, 17, 17, 0.22) 0%,
-    transparent 70%
+    ellipse 90% 65% at 50% -8%,
+    rgba(255, 77, 77, 0.13) 0%,
+    rgba(187, 17, 17, 0.055) 42%,
+    transparent 72%
   );
   pointer-events: none;
 }
 
 /* Centred title card over left-aligned content below - the conventional
    pairing, and the one the symmetric grid + wash behind it is built for.
-   Exists as a wrapper so the content is width-capped and sits above the
-   ::before wash without needing a z-index. */
+   z-index because ::after is generated after the content and would otherwise
+   paint the wash on top of it. */
 .hero-inner {
   position: relative;
+  z-index: 1;
   max-width: var(--content-max);
   margin-inline: auto;
 }
@@ -577,7 +602,7 @@ p {
 .hero-tagline {
   max-width: 48ch;
   margin: var(--space-5) auto 0;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: var(--text-lg);
   line-height: var(--leading-body);
 }
@@ -589,8 +614,8 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-5) clamp(2rem, 6vw, 4rem);
-  max-width: 760px;
-  margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+  max-width: 720px;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) auto 0;
   padding-top: var(--space-5);
   border-top: 1px solid var(--border-color);
 }
