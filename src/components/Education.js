@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
+import Reveal from "./Reveal";
 import { FaGraduationCap } from "react-icons/fa6";
 
 import SectionHead from "./SectionHead";
@@ -8,7 +8,7 @@ import data from "../data/content.json";
 export default function Education() {
   return (
     <section className="section educationdiv">
-      <Fade direction="up" triggerOnce fraction={0.15}>
+      <Reveal>
         <SectionHead index="05" eyebrow="Education" title="Where I studied" />
 
         <div className="timeline">
@@ -41,7 +41,7 @@ export default function Education() {
             </article>
           ))}
         </div>
-      </Fade>
+      </Reveal>
     </section>
   );
 }

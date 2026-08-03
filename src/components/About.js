@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
+import Reveal from "./Reveal";
 import aboutImage from "../assets/About Section Image.webp";
 
 import SectionHead from "./SectionHead";
@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <section className="section aboutdiv">
-      <Fade direction="up" triggerOnce fraction={0.15}>
+      <Reveal>
         <SectionHead index="04" eyebrow="About" title="How I got here" />
 
         <div className="about-grid">
@@ -32,7 +32,7 @@ export default function About() {
               ))}
           </div>
         </div>
-      </Fade>
+      </Reveal>
     </section>
   );
 }

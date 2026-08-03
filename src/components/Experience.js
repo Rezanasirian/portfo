@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Fade } from "react-awesome-reveal";
+import Reveal from "./Reveal";
 import { FiChevronDown } from "react-icons/fi";
 
 import SectionHead from "./SectionHead";
@@ -15,7 +15,7 @@ export default function Experience() {
 
   return (
     <section className="section experiencediv">
-      <Fade direction="up" triggerOnce fraction={0.15}>
+      <Reveal>
         <SectionHead
           index="01"
           eyebrow="Experience"
@@ -102,7 +102,7 @@ export default function Experience() {
             );
           })}
         </div>
-      </Fade>
+      </Reveal>
     </section>
   );
 }

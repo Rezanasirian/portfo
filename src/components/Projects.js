@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
+import Reveal from "./Reveal";
 
 import ProjectCard from "./ProjectCard";
 import SectionHead from "./SectionHead";
@@ -8,7 +8,7 @@ import data from "../data/content.json";
 export default function Projects() {
   return (
     <section className="section projectsdiv">
-      <Fade direction="up" triggerOnce fraction={0.15}>
+      <Reveal>
         <SectionHead
           index="02"
           eyebrow="Projects"
@@ -24,7 +24,7 @@ export default function Projects() {
             />
           ))}
         </div>
-      </Fade>
+      </Reveal>
     </section>
   );
 }

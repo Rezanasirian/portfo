@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
+import Reveal from "./Reveal";
 
 import SectionHead from "./SectionHead";
 import data from "../data/content.json";
@@ -7,7 +7,7 @@ import data from "../data/content.json";
 export default function Skills() {
   return (
     <section className="section skillsdiv">
-      <Fade direction="up" triggerOnce fraction={0.15}>
+      <Reveal>
         <SectionHead
           index="03"
           eyebrow="Stack"
@@ -28,7 +28,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
-      </Fade>
+      </Reveal>
     </section>
   );
 }

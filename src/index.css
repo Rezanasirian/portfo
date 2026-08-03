@@ -231,6 +231,19 @@ p {
   margin-inline: auto;
 }
 
+/* Scroll reveal. The motion that react-awesome-reveal used to generate at
+   runtime, as two static rules. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal--shown {
+  opacity: 1;
+  transform: none;
+}
+
 /* One card treatment for the whole site. Previously projects, services and
    experience each had their own border radius, colour and hover behaviour. */
 .card-base {
@@ -1155,6 +1168,13 @@ p {
   }
 
   .projectcard:hover .project-img {
+    transform: none;
+  }
+
+  /* The blanket transition-duration override above would make this snap in
+     rather than never move, so opt the reveal out explicitly. */
+  .reveal {
+    opacity: 1;
     transform: none;
   }
 }

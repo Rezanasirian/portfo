@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
+import Reveal from "./Reveal";
 import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
 
@@ -18,7 +18,7 @@ export default function Connect() {
 
   return (
     <div className="section connectdiv">
-      <Fade direction="up" triggerOnce fraction={0.15}>
+      <Reveal>
         <SectionHead
           index="06"
           eyebrow="Contact"
@@ -46,7 +46,7 @@ export default function Connect() {
             );
           })}
         </div>
-      </Fade>
+      </Reveal>
     </div>
   );
 }
